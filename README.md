@@ -1,1 +1,0 @@
-# insight-architectures.github.io
