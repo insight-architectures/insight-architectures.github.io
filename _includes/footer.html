@@ -1,32 +1,19 @@
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                {% comment %}
-                <ul class="list-inline">
-                    <li>
-                        <a href="#home">Home</a>
-                    </li>
-                    <li class="footer-menu-divider">&sdot;</li>
-                    <li>
-                        <a href="#about">About</a>
-                    </li>
-                    <li class="footer-menu-divider">&sdot;</li>
-                    <li>
-                        <a href="#services">Services</a>
-                    </li>
-                    <li class="footer-menu-divider">&sdot;</li>
-                    <li>
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>
-                {% endcomment %}
-                <p class="copyright text-muted small">{{ site.copyright }}</p>
-            </div>
-            <div class="col-md-4">
-                {{ site.credits }}
-            </div>
+<div class="footer-wrapper">
+    <div class="foot-left">
+        {% comment %}
+        <a href="#">
+            <span class="logo-circle">
+                <img src="assets/images/logo.png" class="logo" />
+            </span>
+            <span class="logo-text">{{ site.title | upcase }}</span>
+        </a>
+        {% endcomment %}
+        <div class="foot-social-media fa-2x">
+            <a href="mailto:{{ site.data.company.contacts.email }}" title="Email"><i class="fas fa-envelope-square"></i></a>
+            <a href="{{ site.data.company.social.linkedin.url }}" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="{{ site.data.company.social.github.url }}" title="GitHub"><i class="fab fa-github-square"></i></a>
+            <a href="{{ site.data.company.social.twitter.url }}" title="Twitter"><i class="fab fa-twitter-square"></i></a>
         </div>
     </div>
-</footer>
+    <div class="foot-right">&nbsp;</div>
+</div>

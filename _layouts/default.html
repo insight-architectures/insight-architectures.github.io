@@ -1,15 +1,29 @@
 <!DOCTYPE html>
-<html>
-	{% include head.html %}
+<html class="no-js" lang="en-US">
 
-	<body>
-		{% include header.html %}
-		{% comment %}
-		{% include about.html %}
-		{% include page_content.html %}
-		{% include contact.html %}
-		{% endcomment %}
-		{% include footer.html %}
-		{% include js.html %}
-	</body>
+{% include head.html %}
+
+<body>
+    <div class="off-canvas-wrapper">
+        <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+            <div class="off-canvas-content" data-off-canvas-content>
+                <section id="head" data-sticky data-anchor="hero">
+                    {% include header.html %}
+                </section>
+                <section id="body">
+                    <main class="intro" id="hero">&nbsp;</main>
+                    <main class="content">
+                        {% include content.html %}
+                        <main class="footer">
+                            {% include footer.html %}
+                        </main>
+                    </main>
+                </section>
+            </div>
+        </div>
+    </div>
+    <a id="back-top"><i class="far fa-arrow-alt-circle-up"></i></a>
+    {% include js.html %}
+</body>
+
 </html>
