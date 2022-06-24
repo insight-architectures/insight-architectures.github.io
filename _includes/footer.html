@@ -1,0 +1,19 @@
+<div class="footer-wrapper">
+    <div class="foot-left">
+        {% comment %}
+        <a href="#">
+            <span class="logo-circle">
+                <img src="assets/images/logo.png" class="logo" />
+            </span>
+            <span class="logo-text">{{ site.title | upcase }}</span>
+        </a>
+        {% endcomment %}
+        <div class="foot-social-media fa-2x">
+            <a href="mailto:{{ site.data.company.contacts.email }}" title="Email"><i class="fas fa-envelope-square"></i></a>
+            <a href="{{ site.data.company.social.linkedin.url }}" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="{{ site.data.company.social.github.url }}" title="GitHub"><i class="fab fa-github-square"></i></a>
+            <a href="{{ site.data.company.social.twitter.url }}" title="Twitter"><i class="fab fa-twitter-square"></i></a>
+        </div>
+    </div>
+    <div class="foot-right">&nbsp;</div>
+</div>
