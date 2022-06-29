@@ -3,9 +3,7 @@ url: https://www.insightarchitectures.com
 title: Insight Architectures
 author: Renato Golia
 description: > # "Write an awesome description for your new site here. 
-  You can edit this line in _config.yml. It will appear in your document 
-  head meta (for Google search results) and in your feed.xml site 
-  description.
+  Insight Architectures (IA) is a software architecture and development consultancy that delivers tailor-made software solutions and services to all kinds of businesses.
 copyright: 'Copyright &copy; 2022 Insight Architectures AB. All Rights Reserved.'
 
 markdown: kramdown
