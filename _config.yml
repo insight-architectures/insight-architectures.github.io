@@ -23,3 +23,9 @@ exclude:
 
 settings:
   google-analytics-tracking-id: G-MFC8KNLDFJ
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      hero: true

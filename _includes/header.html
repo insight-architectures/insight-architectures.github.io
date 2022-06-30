@@ -1,8 +1,12 @@
 <div class="head-wrapper">
     <div class="head-left">
+        {% if page.path == 'index.html' %}
+        <a href="#">
+        {% else %}
         <a href="/">
+        {% endif %}
             <span class="logo-circle">
-                <img src="assets/images/logo.png" class="logo" alt="{{ site.title }}"/>
+                <img src="/assets/images/logo.png" class="logo" alt="{{ site.title }}"/>
             </span>
             <span class="logo-text">{{ site.title | upcase }}</span>
         </a>

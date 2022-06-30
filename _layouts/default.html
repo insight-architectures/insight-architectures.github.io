@@ -11,7 +11,9 @@
                     {% include header.html %}
                 </section>
                 <section id="body">
+                    {% if page.hero %}
                     <main class="intro" id="hero">&nbsp;</main>
+                    {% endif %}
                     <main class="content">
                         {% include content.html %}
                         <main class="footer">
