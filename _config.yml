@@ -20,3 +20,6 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - serve.sh
+
+settings:
+  google-analytics-tracking-id: G-MFC8KNLDFJ
