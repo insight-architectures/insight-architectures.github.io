@@ -6,7 +6,7 @@ description: 'Insight Architectures is a software architecture and development c
 copyright: 'Copyright &copy; 2022 Insight Architectures AB. All Rights Reserved.'
 
 markdown: kramdown
-permalink: pretty
+# permalink: pretty
 
 exclude:
   - .sass-cache/
@@ -28,4 +28,5 @@ defaults:
   - scope:
       path: ""
     values:
+      layout: default
       hero: true

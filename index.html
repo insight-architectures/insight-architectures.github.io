@@ -6,7 +6,7 @@ title: Insight Architectures
 <p>Insight Architectures (IA) is a software architecture and development consultancy that delivers tailor-made software solutions and services to all kinds of businesses.</p>
 <p>Founded in Stockholm in 2020, IA is a young company but one that is born out of 12+ years of experience in cloud-based software architecture and development, with a particular focus on .NET technologies, cloud-native backend architecture and AWS services. Combining this technical expertise with a strong focus on project design, Insight Architectures is able to plan and deliver business-ready software solutions that meet your organization’s needs and expectations, now and into the future.</p>
 
-{% comment %}
+{% if jekyll.environment != 'production' %}
 <div class="row expanded collapse">
   <div class="column">
     <div class="box-container">
@@ -37,7 +37,7 @@ title: Insight Architectures
     </div>
   </div>
 </div>
-{% endcomment %}
+{% endif %}
 
 <h2 name="about-us">About us</h2>
 <div class="row expanded collapse row-intro">
@@ -48,7 +48,7 @@ title: Insight Architectures
   </div>
 </div>
 
-{% comment %}
+{% if jekyll.environment != 'production' %}
 <h2 name="solutions">Our Solutions</h2>
 <div class="row expanded collapse row-grid">
   <div class="medium-6 columns col-1">
@@ -82,7 +82,7 @@ title: Insight Architectures
     </div>
   </div>
 </div>
-{% endcomment %}
+{% endif %}
 
 <h2 name="contact">Contact</h2>
 <div class="row expanded collapse row-contact">
@@ -102,7 +102,7 @@ title: Insight Architectures
         <i class="fas fa-mobile-alt fa-fw"></i>
         <a href="tel:{{ site.data.company.contacts.tel }}">{{ site.data.company.contacts.tel }}</a>
       </div>
-      {% comment %}
+      {% if jekyll.environment != 'production' %}
       <br/>
       <div class="contact-github">
           <i class="fab fa-github-square fa-fw"></i>
@@ -116,7 +116,7 @@ title: Insight Architectures
           <i class="fab fa-twitter-square fa-fw"></i>
           <a href="{{ site.data.company.social.twitter.url }}">Twitter</a>
       </div>
-      {% endcomment %}
+      {% endif %}
       <br>
       <h4>Visiting and mailing address</h4>
       <div class="contact-address">
