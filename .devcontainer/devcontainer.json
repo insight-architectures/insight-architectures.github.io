@@ -30,15 +30,5 @@
 
 	"containerEnv": {
 		"JEKYLL_GITHUB_TOKEN": "${localEnv:JEKYLL_GITHUB_TOKEN}"
-	},
-
-	"customizations": {
-		"codespaces": {
-			"repositories": {
-				"insight-architectures/insight-architectures.github.io": {
-					"permissions": "write-all"
-				}
-			}
-		}
 	}
 }
