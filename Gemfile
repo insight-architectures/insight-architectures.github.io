@@ -18,8 +18,11 @@ source "https://rubygems.org"
 # # Performance-booster for watching directories on Windows
 # gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 
-gem 'jekyll-sass-converter'
-gem "github-pages", group: :jekyll_plugins
+group :jekyll_plugins do
+    gem 'jekyll-sass-converter'
+    gem "github-pages"
+    gem "jekyll-datapage-generator"
+end
 
 gem "tzinfo-data"
 gem "wdm", "~> 0.1.0" if Gem.win_platform?

@@ -1,0 +1,14 @@
+pages:
+  - path: /_pages/team.md
+    url: /team/
+    label: Our team
+  - path: /_pages/customers.md
+    url: /customers/
+    label: Our customers
+  - path: /_pages/home.md
+    isHome: true
+    sections:
+      - label: About us
+        url: "/#about-us"
+      - label: Contact
+        url: "/#contact"

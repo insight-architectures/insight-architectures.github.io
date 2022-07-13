@@ -1,0 +1,20 @@
+- id: rengol
+  first_name: Renato
+  last_name: Golia
+  role: Solutions Architect
+  is_active: true
+  email: renato.golia@insightarchitectures.com
+  github: https://github.com/kralizek
+  linkedin: https://www.linkedin.com/in/renatogolia/
+  homepage: https://renatogolia.com
+  calendly: https://calendly.com/renato-golia
+  twitter: https://twitter.com/Kralizek
+  
+- id: jorros
+  first_name: Jörg
+  last_name: Rosenauer
+  role: Solutions Architect
+  is_active: true
+  email: jorg.rosenauer@insightarchitectures.com
+  github: https://github.com/jorros
+  linkedin: https://www.linkedin.com/in/jorgrosenauer/

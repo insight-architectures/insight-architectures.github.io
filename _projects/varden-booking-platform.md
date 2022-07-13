@@ -1,5 +1,7 @@
 ---
-title: Booking Platform for Vården
+title: Booking Platform
+permalink: customers/varden/booking-platform
+customer: varden
 ---
 
 <p>

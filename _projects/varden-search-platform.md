@@ -1,5 +1,7 @@
 ---
-title: Search Platform for Vården
+title: Search Platform
+permalink: customers/varden/search-platform
+customer: varden
 ---
 
 <p>

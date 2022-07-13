@@ -1,5 +1,7 @@
 ---
-title: Member Platform for Vården
+title: Member Platform
+permalink: customers/varden/member-platform
+customer: varden
 ---
 
 <p>
