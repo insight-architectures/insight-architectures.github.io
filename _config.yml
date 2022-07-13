@@ -32,4 +32,11 @@ defaults:
       path: ""
     values:
       layout: default
-      hero: true
+
+collections:
+  customers:
+    output: true
+    permalink: "/:collection/:title"
+  projects:
+    output: true
+    permalink: "/:collection/:title"
