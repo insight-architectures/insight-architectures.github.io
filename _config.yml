@@ -21,6 +21,9 @@ exclude:
   - vendor/ruby/
   - serve.sh
 
+include:
+  - _pages
+
 settings:
   google-analytics-tracking-id: G-MFC8KNLDFJ
 
