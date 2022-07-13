@@ -7,19 +7,32 @@
     <div class="off-canvas-wrapper">
         <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
             <div class="off-canvas-content" data-off-canvas-content>
+                {% if page.hero %}
                 <section id="head" data-sticky data-anchor="hero">
                     {% include header.html %}
                 </section>
+                {% else %}
+                <section id="head" data-sticky data-margin-top="0">
+                    {% include header.html %}
+                </section>
+                {% endif %}
                 <section id="body">
                     {% if page.hero %}
                     <main class="intro" id="hero">&nbsp;</main>
-                    {% endif %}
-                    <main class="content">
+                    <main class="content hero">
                         {% include content.html %}
                         <main class="footer">
                             {% include footer.html %}
                         </main>
                     </main>
+                    {% else %}
+                    <main class="content no-hero">
+                        {% include content.html %}
+                        <main class="footer">
+                            {% include footer.html %}
+                        </main>
+                    </main>
+                    {% endif %}
                 </section>
             </div>
         </div>

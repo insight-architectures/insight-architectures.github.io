@@ -2,6 +2,7 @@
 layout: default
 permalink: /index.html
 title: Insight Architectures
+hero: true
 ---
 
 <p>Insight Architectures (IA) is a software architecture and development consultancy that delivers tailor-made software solutions and services to all kinds of businesses.</p>

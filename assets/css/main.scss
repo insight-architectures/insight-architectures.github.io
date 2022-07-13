@@ -421,7 +421,12 @@ main.intro {
 }
 
 main.content {
-	top: calc(20vw + 105px);
+	&.hero{
+		top: calc(20vw + 105px);
+	}
+	&.no-hero{
+		top: calc(50px);
+	}
 	margin-bottom: calc(20vw + 105px);
 	position: relative;
 	background: rgb(234,234,234);
