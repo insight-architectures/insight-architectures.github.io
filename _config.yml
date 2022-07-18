@@ -37,12 +37,15 @@ defaults:
       path: ""
       type: "customers"
     values:
-      layout: customers
+      layout: customer
+      custom_style_sheet: customers
 
 collections:
   projects:
     output: true
     permalink: "/:collection/:title"
+  customers:
+    output: true
 
 page_gen-dirs: true
 
@@ -53,8 +56,8 @@ page_gen:
     dir: 'team'
     filter: is_active
     title_expr: record['first_name'] + " " + record['last_name']
-  - data: 'customers'
-    template: 'customer'
-    name: 'id'
-    dir: 'customers'
-    title: name
+  # - data: 'customers'
+  #   template: 'customer'
+  #   name: 'id'
+  #   dir: 'customers'
+  #   title: name

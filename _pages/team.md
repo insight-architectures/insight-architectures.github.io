@@ -2,6 +2,7 @@
 permalink: /team/index.html
 title: Our team
 custom_style_sheet: team
+link_to_page: false
 ---
 
 <div class="grid-container">
@@ -11,10 +12,11 @@ custom_style_sheet: team
             <div class="card">
                 <img src="/assets/images/team/{{ member.id }}.jpg">
                 <div class="card-section">
-                    {%- comment -%}
+                    {% if page.link_to_page %}
                     <h4><a href="{{ member.id | datapage_url: '/team' }}">{{ member.first_name}} {{ member.last_name}}</a></h4>
-                    {%- endcomment -%}
+                    {% else %}
                     <h4>{{ member.first_name}} {{ member.last_name}}</h4>
+                    {% endif %}
                     {%- if member.role -%}
                     <p>{{ member.role }}</p>
                     {%- endif -%}

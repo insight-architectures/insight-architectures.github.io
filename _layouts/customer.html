@@ -1,13 +1,56 @@
 ---
 layout: default
 ---
-{%- assign paragraphs = page.description | newline_to_br | split: '<br />'  -%}
-{%- for p in paragraphs -%}
-<p>{{p}}</p>
-{%- endfor -%}
-<ul>
-{% assign projects = site.projects | where: "customer", page.id | sort_natural  %}
-{% for project in projects %}
-    <li><a href="{{project.url}}">{{project.title}}</a></li>
-{% endfor %}
-</ul>
+{% assign projects = site.projects | where: "customer", id | sort_natural %}
+{% assign tags = page.tags | sort_natural %}
+
+<div class="grid-x grid-margin-2">
+    <div class="cell large-8 large-order-1 small-order-2">
+        {{ content }}
+    </div>
+    <div class="cell large-4 small-order-1">
+        <div>
+            <div class="card">
+                {%- if page.logo -%}
+                <img src="/assets/images/customers/{{ page.logo }}" style="padding: 15px">
+                {%- endif -%}
+                {%- if page.short_description -%}
+                <div class="card-section">{{page.short_description}}</div>
+                {%- endif -%}
+                {%- if page.website -%}
+                <div class="card-section">
+                    <a href="{{ page.website }}" title="Visit {{ page.title }}" target="_blank">{{page.website}}</a>
+                </div>
+                {%- endif -%}
+                {%- if projects.size > 0 -%}
+                <div class="card-section">
+                    <h4>Projects</h4>
+                    <ul>
+                    {% for project in projects %}
+                        <li><a href="{{ project.url }}">{{project.title}}</a></li>
+                    {% endfor %}
+                    </ul>
+                </div>
+                {%- endif -%}
+                {%- if page.tags.size > 0 -%}
+                <div class="card-section">
+                {%- for tag in tags -%}
+                    <span class="tag">{{tag}}</span>
+                {%- endfor -%}
+                </div>
+                {%- endif -%}
+            </div>
+        </div>
+    </div>
+    {%- if page.reviews.size > 0 -%}
+    <div class="cell large-12 small-12 large-order-3 small-order-3">
+        <h3>Reviews</h3>
+        {%- for review in page.reviews -%}
+        <div class="card-section">
+            <h4>{{review.author.name}} ({{ review.author.title}})</h4>
+            {{review.text}}
+        </div>
+        {%- endfor -%}
+    </div>
+    {%- endif -%}
+</div>
