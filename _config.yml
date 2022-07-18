@@ -52,7 +52,6 @@ page_gen:
     name: 'id'
     dir: 'team'
     filter: is_active
-    # title_expr: "Our team: " + record['first_name'] + "_" + record['last_name']
     title_expr: record['first_name'] + " " + record['last_name']
   - data: 'customers'
     template: 'customer'
