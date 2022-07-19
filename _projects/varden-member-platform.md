@@ -1,7 +1,20 @@
 ---
 title: Member Platform
-permalink: customers/varden/member-platform
+permalink: customers/varden/member-platform/
 customer: varden
+short_description: |
+    Cras sodales, est in volutpat efficitur, massa justo convallis leo, et scelerisque lectus risus quis erat. In vulputate dolor at mi vestibulum, ac convallis erat dapibus. Aliquam convallis ipsum urna, nec rutrum lorem vulputate auctor. 
+publish: false
+tags:
+    - aws
+    - lambda
+    - docker
+    - dotnet
+    - terraform
+    - circleci
+    - github
+    - nuget
+    - localstack
 ---
 
 <p>

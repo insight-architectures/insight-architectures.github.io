@@ -1,0 +1,13 @@
+---
+layout: default
+---
+{%- assign customer = site.customers | where: "id", customer | first -%}
+<nav aria-label="You are here:" role="navigation">
+    <ul class="breadcrumbs">
+        <li><a href="/customers">Our customers</a></li>
+        <li><a href="{{customer.url}}">{{customer.title}}</a></li>
+        <li><span class="show-for-sr">Current: </span>{{page.title}}</li>
+    </ul>
+</nav>
+
+{{content}}

@@ -1,8 +1,15 @@
 ---
 layout: default
 ---
-{% assign projects = site.projects | where: "customer", id | sort_natural %}
+{% assign projects = site.projects | where: "customer", id | where: "publish", true | sort_natural %}
 {% assign tags = page.tags | sort_natural %}
+
+<nav aria-label="You are here:" role="navigation">
+    <ul class="breadcrumbs">
+        <li><a href="/customers">Our customers</a></li>
+        <li><span class="show-for-sr">Current: </span>{{page.title}}</li>
+    </ul>
+</nav>
 
 <div class="grid-x grid-margin-2">
     <div class="cell large-8 large-order-1 small-order-2">
@@ -22,16 +29,6 @@ layout: default
                     <a href="{{ page.website }}" title="Visit {{ page.title }}" target="_blank">{{page.website}}</a>
                 </div>
                 {%- endif -%}
-                {%- if projects.size > 0 -%}
-                <div class="card-section">
-                    <h4>Projects</h4>
-                    <ul>
-                    {% for project in projects %}
-                        <li><a href="{{ project.url }}">{{project.title}}</a></li>
-                    {% endfor %}
-                    </ul>
-                </div>
-                {%- endif -%}
                 {%- if page.tags.size > 0 -%}
                 <div class="card-section">
                 {%- for tag in tags -%}
@@ -42,8 +39,27 @@ layout: default
             </div>
         </div>
     </div>
+    {%- if projects.size > 0 -%}
+    <div class="cell large-12 small-12 large-order-3 small-order-3 no-link">
+        <h3>Projects</h3>
+        {%- for project in projects -%}
+        <a href="{{ project.url }}">
+            <div class="card-section">
+                <h4>{{project.title}}</h4>
+                {{project.short_description}}
+                <div style="margin-top: 5px;">
+                {% assign tags = project.tags | sort_natural %}
+                {%- for tag in tags -%}
+                    <span class="tag">{{tag}}</span>
+                {%- endfor -%}
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+    {%- endif -%}
     {%- if page.reviews.size > 0 -%}
-    <div class="cell large-12 small-12 large-order-3 small-order-3">
+    <div class="cell large-12 small-12 large-order-3 small-order-4">
         <h3>Reviews</h3>
         {%- for review in page.reviews -%}
         <div class="card-section">

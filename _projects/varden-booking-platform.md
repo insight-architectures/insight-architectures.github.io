@@ -1,7 +1,22 @@
 ---
 title: Booking Platform
-permalink: customers/varden/booking-platform
+permalink: customers/varden/booking-platform/
 customer: varden
+publish: true
+short_description: |
+    The Booking Platform is a system built to act as an adapter between Vården's platform and the many booking providers available in the healthcare space. This system allows Vården to quickly integrate new providers and onboard their customers on its platform.
+tags:
+    - aws
+    - lambda
+    - docker
+    - tye
+    - dotnet
+    - grpc
+    - terraform
+    - open telemetry
+    - circleci
+    - github
+    - nuget
 ---
 
 <p>

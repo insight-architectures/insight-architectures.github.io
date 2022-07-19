@@ -39,6 +39,11 @@ defaults:
     values:
       layout: customer
       custom_style_sheet: customers
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: project
 
 collections:
   projects:
@@ -56,8 +61,3 @@ page_gen:
     dir: 'team'
     filter: is_active
     title_expr: record['first_name'] + " " + record['last_name']
-  # - data: 'customers'
-  #   template: 'customer'
-  #   name: 'id'
-  #   dir: 'customers'
-  #   title: name

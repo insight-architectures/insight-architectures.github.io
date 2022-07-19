@@ -1,7 +1,21 @@
 ---
 title: Search Platform
-permalink: customers/varden/search-platform
+permalink: customers/varden/search-platform/
 customer: varden
+short_description: |
+    Sed euismod facilisis ligula nec pulvinar. Mauris diam erat, sodales at urna vel, sagittis convallis augue. Mauris iaculis non lectus a tempus. Nam vel tortor ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+publish: false
+tags:
+    - aws
+    - lambda
+    - docker
+    - tye
+    - dotnet
+    - terraform
+    - circleci
+    - github
+    - nuget
+    - elasticsearch
 ---
 
 <p>

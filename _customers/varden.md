@@ -8,8 +8,6 @@ website: https://www.varden.se
 logo: varden-logo.svg
 tags:
 - healthcare
-- aws
-- dotnet
 reviews:
 - author:
     name: Richard Ginzburg
