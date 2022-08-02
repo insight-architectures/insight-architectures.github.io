@@ -4,7 +4,7 @@ permalink: customers/varden/booking-platform/
 customer: varden
 publish: true
 short_description: |
-    The Booking Platform is a system built to act as an adapter between Vården's platform and the many booking providers available in the healthcare space. This system allows Vården to quickly integrate new providers and onboard their customers on its platform.
+    The Booking Platform is a system built to facilitate the integration of the many booking providers available in the healthcare space with Vården's platform. This system allows Vården to quickly integrate new providers and onboard their customers on its platform.
 tags:
     - aws
     - lambda
@@ -19,18 +19,67 @@ tags:
     - nuget
 ---
 
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida massa id pellentesque hendrerit. Nunc sit amet venenatis nisi, a blandit metus. Ut eu convallis nunc. Mauris eget ultricies neque, non aliquam erat. Nullam scelerisque, lectus at facilisis elementum, tellus odio dignissim nunc, nec aliquet ligula tortor consectetur enim. Vivamus a imperdiet sem. Nunc odio magna, tempus vel sodales vel, vestibulum a ligula. Proin at quam nec erat finibus tempor. Phasellus eget rhoncus diam. Aenean sagittis condimentum erat, in maximus lectus placerat a. Curabitur interdum dapibus ultricies. Vestibulum fringilla viverra nisi ac vulputate. Morbi pulvinar ligula tellus. Phasellus accumsan purus et libero mattis, sed gravida felis consectetur. Nulla blandit erat ut odio tincidunt viverra.
-</p>
-<p>
-Curabitur placerat, sem quis efficitur euismod, metus justo pretium eros, scelerisque tincidunt nisi dolor eget magna. Donec aliquam, ante sed tempor volutpat, est risus facilisis urna, in volutpat felis tellus quis neque. Cras lorem urna, rutrum nec lobortis pellentesque, bibendum non erat. Donec a nisi nec purus interdum viverra. Praesent quis ornare justo, et eleifend dui. Phasellus venenatis rutrum mollis. Nam pulvinar leo id elit tincidunt, auctor volutpat elit iaculis. Curabitur vel nunc nisl. Nunc efficitur purus massa, vitae bibendum est aliquam ac. Duis eu tristique dolor. Sed nec suscipit urna, vitae dapibus lacus. Nam mattis ligula nec pretium pretium. Nullam feugiat quam eu hendrerit gravida. Aliquam dignissim luctus orci, eget cursus magna ornare ut.
-</p>
-<p>
-Nullam malesuada volutpat lacus, quis posuere ipsum lobortis nec. Proin ut lacus sit amet elit tristique finibus. Suspendisse lacinia consequat libero eget efficitur. Nullam consequat semper neque. Integer neque massa, vehicula eget nisl et, lobortis porttitor massa. Pellentesque euismod ornare felis. Mauris sed dictum tortor. In gravida lorem quis commodo faucibus. Nulla tristique, diam a tempor convallis, urna velit auctor nisl, quis volutpat ante odio ac nunc. Sed condimentum at leo nec pellentesque. Etiam rhoncus hendrerit tortor, eu vestibulum diam pellentesque id. Phasellus ullamcorper tincidunt vestibulum. Vivamus eu justo lacus. Sed consequat elementum metus, sed scelerisque massa fringilla a. Vivamus a felis in purus cursus varius.
-</p>
-<p>
-Proin ut metus at turpis interdum posuere. Sed dapibus sem elit, in fringilla mauris semper nec. Ut vel pulvinar odio, nec vehicula libero. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam felis tellus, ullamcorper eget leo convallis, rhoncus maximus metus. In vel ipsum tellus. Curabitur non condimentum felis. Donec tincidunt sollicitudin porta. Phasellus luctus orci erat, at pellentesque lorem ornare dapibus. Nam vel placerat purus. Sed quis mollis ex. Mauris non mauris quis neque iaculis hendrerit. Nam dui ligula, mollis id purus ut, commodo volutpat tellus.
-</p>
-<p>
-Suspendisse a velit eget augue dignissim rhoncus nec sit amet tellus. Curabitur nec purus eu sapien pretium ornare. Nunc auctor lorem nec ipsum tristique, ac ullamcorper sapien egestas. Ut ornare lacus risus, eget fringilla mauris sollicitudin sed. Curabitur dolor urna, laoreet vitae luctus ac, dignissim at nisl. Ut rutrum leo ac libero commodo, quis iaculis arcu eleifend. Aliquam ultricies leo eget magna imperdiet convallis. Mauris diam nibh, lacinia ut fermentum in, porttitor eget neque. Etiam rhoncus elit nec diam rhoncus bibendum. Morbi eget faucibus orci. Maecenas placerat sem quis leo finibus lobortis. Maecenas eleifend volutpat ex, ac maximus tortor ullamcorper at.
-</p>
+The Booking Platform is a system built to facilitate the integration of the many booking providers available in the healthcare space with Vården's platform.
+
+When Vården contacted us, they had a need for quickly increase the pace they were able to onboard new booking providers. The Booking Platform solves this need by exposing a unified programming interface to query each provider for available time slots and reserve treatments.
+
+Once built and rolled out, the Vården development team is tasked to take ownership of the platform and expand the park of integrated providers.
+
+### Architecture
+
+The architecture behind the Booking Platform is based on the [IDesign Method][1].  
+Following the Method's guidelines, the system is decomposed into several services, each addressing a volatility of the system itself. Moreover, the services are spread across different layers, each layer having a specific role in the overall architecture.
+
+The services composing the system use GRPC to communicate with each other. The Vården's platform can only interact with the Booking Platform via a REST API that exposes the operations available to client systems. The REST API service publishes an OpenAPI specification schema. The schema is used to generate a typed client library that is used by Vården to integrate the calls to the Booking Platform API into their system.
+
+All the services are based on ASP.NET Core 6 and run on the .NET 6 runtime.
+
+### Developer experience
+
+Great care is given to the overall developer experience. Specifically, the whole system is designed to be executed locally with the help of [Microsoft Tye][6]. Furthermore, with the help of tools like [Docker Compose][7], the developers working with this system will be able to execute locally the very same bits that are deployed on production.
+
+Another important aspect of the developer experience is the observability of the system. The Booking Platform was designed with observability in mind so that developers could use traces, logs and metrics to troubleshoot and validate the behavior of the system. The integration of tools like [AWS CloudWatch][2], [AWS X-Ray][3] and [Logz.io][4] via the [OpenTelemetry][5] project gives the developers all the information they need to properly operate the system.
+
+The source code is hosted on GitHub so that developers can leverage the well-known and established [GitHub Flow][15] to collaborate while ensuring the quality is kept in check with the help of pull requests and code reviews.
+
+Finally, the type client library mentioned in the paragraph above is another sign of the importance and care given to the developer experience.
+
+### Continuous integration
+
+Like many modern systems, the Booking Platform has a fully defined continuous integration pipeline that reacts to any change to the main Git repository. The pipeline is managed by [CircleCI][13] and is composed by different jobs depending on whether the change has been pushed to the default branch or to a pull request branch.
+
+The CI pipeline is responsible of building, testing, packaging and deploying the artifacts to the proper environment.
+
+Whilst all changes to the main branch are eventually deployed to the Development environment, GitHub releases are used to initiate the steps of the pipelines to deploy the artifacts into the Staging environment and, after manual approval, to the Production environment.
+
+Tools like the AWS CLI, the AWS tools for PowerShell, the .NET SDK and custom CircleCI orbs are used to perform the different tasks of the pipeline.
+
+### Automated testing
+
+Given the complexity of the platform, several automated testing strategies were adopted to ensure the correctness and overall design of the system.
+
+Each service is accompaigned by a throrough set of unit tests developed with [NUnit][8] with the addition of libraries like [Moq][10] and [AutoFixture][9]. These libraries help reduce the amount of code needed thus making each unit test much more expressive and its intent very clear.
+
+While unit tests ensure that every service is behaving as expected, two layers of integration tests are added to verify that the system as a whole behaves as expected.
+
+The first layer uses the [ASP.NET Core `WebApplicationFactory` helper class][11] to build an in-memory representation of the whole system. While not a true representation of the deployed system, it helps quickly test the integration of all services by [overriding the GRPC networking layer][12].
+
+The second and final layer of integration tests contains most of the tests of the previous layer but targets an instance of the whole system instantiated via Docker Compose. This layer is the closest representation of the system deployed in the cloud environments.
+
+### Infrastructure as Code
+
+[1]: https://www.idesign.net/Download/IDesign-Method-Management-Overview.pdf
+[2]: https://aws.amazon.com/cloudwatch/
+[3]: https://aws.amazon.com/xray/
+[4]: https://logz.io/
+[5]: https://opentelemetry.io/
+[6]: https://devblogs.microsoft.com/dotnet/introducing-project-tye/
+[7]: https://docs.docker.com/compose/
+[8]: https://nunit.org/
+[9]: https://autofixture.github.io/
+[10]: https://github.com/Moq
+[11]: https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests
+[12]: https://renatogolia.com/2021/12/19/testing-asp-net-core-grpc-applications-with-webapplicationfactory/
+[13]: https://circleci.com/
+[14]: https://www.terraform.io/
+[15]: https://docs.github.com/en/get-started/quickstart/github-flow

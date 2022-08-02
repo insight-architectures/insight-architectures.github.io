@@ -23,7 +23,10 @@ reviews:
 ---
 
 
-<p>Vården is a Swedish company whose mission is to make it easier and faster for people to find, compare and book care treatments.</p>
-<p>Today, more than 18 000 licensed caregivers are listed on Vården's website and more than 600 000 visitors use their services to find, compare and book care treatments according to their preferences.</p>
-<p>Insight Architectures is helping Vården into decomposing their current platform into a collection of independent, native-based smaller platforms that are fully responsible of their data and the services needed to perform their operations.</p>
-<p>This architecture helps Vården development team to quickly scale up since new developers will be tasked of learning just a section of the whole system while being sure that their changes will not affect the rest of the system.</p>
+Vården is a Swedish company whose mission is to make it easier and faster for people to find, compare and book care treatments.
+
+Today, more than 18 000 licensed caregivers are listed on Vården's website and more than 600 000 visitors use their services to find, compare and book care treatments according to their preferences.
+
+Insight Architectures is helping Vården into decomposing their current platform into a collection of independent, cloud-native smaller platforms that are fully responsible of their data and the services needed to perform their operations.
+
+This architecture helps Vården development team to quickly scale up since new developers will be tasked of learning just a section of the whole system while being sure that their changes will not affect the rest of the system.
