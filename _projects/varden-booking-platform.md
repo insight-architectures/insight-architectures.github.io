@@ -17,6 +17,12 @@ tags:
     - circleci
     - github
     - nuget
+reviews:
+    - author:
+        name: Tobias Nilsson
+        title: Integration Architect
+      text: |
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat maximus diam, in suscipit felis hendrerit at. Pellentesque rhoncus tincidunt augue, nec pretium elit. Nulla facilisi. Proin eget aliquet diam. Nullam fermentum nunc lectus, eget convallis diam fringilla at.
 ---
 
 The Booking Platform is a system built to facilitate the integration of the many booking providers available in the healthcare space with Vården's platform.
@@ -68,6 +74,12 @@ The second and final layer of integration tests contains most of the tests of th
 
 ### Infrastructure as Code
 
+Following the most recent cloud engineering best practices, the cloud resources used by the Booking Platform are managed via [Terraform][14].
+
+The Terraform files are stored in another GitHub repository with its own pipeline so that any change to the files are automatically deployed across the different environments.
+
+Finally, a set of modules have been created and [shared on GitHub][16] in order to reduce duplication in this platform infrastructure repository and the ones for future projects.
+
 [1]: https://www.idesign.net/Download/IDesign-Method-Management-Overview.pdf
 [2]: https://aws.amazon.com/cloudwatch/
 [3]: https://aws.amazon.com/xray/
@@ -83,3 +95,4 @@ The second and final layer of integration tests contains most of the tests of th
 [13]: https://circleci.com/
 [14]: https://www.terraform.io/
 [15]: https://docs.github.com/en/get-started/quickstart/github-flow
+[16]: https://github.com/vardengho/terraform-modules
