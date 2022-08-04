@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="{{ site.description }}">
     <meta name="author" content="{{ site.author }}">
-    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <title>{% unless page.title == site.title or page.title.size == 0 %}{{ site.title }} - {{ page.title }}{% else %}{{ site.title }}{% endunless %}</title>
     
     <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-icon-60x60.png">
@@ -29,6 +29,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 
     <link href="/assets/css/main.css" rel="stylesheet" />
+    {%- if page.custom_style_sheet -%}
+    <link href="/assets/css/{{page.custom_style_sheet}}.css" rel="stylesheet" />
+    {%- endif -%}
 
     {% if jekyll.environment == 'production' %}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.settings.google-analytics-tracking-id }}"></script>

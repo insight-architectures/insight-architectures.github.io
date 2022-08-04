@@ -1,0 +1,25 @@
+---
+layout: default
+---
+{%- assign customer = site.customers | where: "id", customer | first -%}
+<nav aria-label="You are here:" role="navigation">
+    <ul class="breadcrumbs">
+        <li><a href="/customers">Our customers</a></li>
+        <li><a href="{{customer.url}}">{{customer.title}}</a></li>
+        <li><span class="show-for-sr">Current: </span>{{page.title}}</li>
+    </ul>
+</nav>
+
+{{content}}
+
+{%- if page.reviews.size > 0 -%}
+<div class="cell large-12 small-12 large-order-3 small-order-4">
+    <h3>Reviews</h3>
+    {%- for review in page.reviews -%}
+    <div>
+        <h4>{{review.author.name}} ({{ review.author.title}})</h4>
+        {{review.text}}
+    </div>
+    {%- endfor -%}
+</div>
+{%- endif -%}

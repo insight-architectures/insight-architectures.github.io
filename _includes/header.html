@@ -1,10 +1,6 @@
 <div class="head-wrapper">
     <div class="head-left">
-        {% if page.path == 'index.html' %}
-        <a href="#">
-        {% else %}
-        <a href="/">
-        {% endif %}
+        <a href="/#">
             <span class="logo-circle">
                 <img src="/assets/images/logo.png" class="logo" alt="{{ site.title }}"/>
             </span>
@@ -14,9 +10,14 @@
     <div class="head-right">
         <div class="main-navigation">
             <ul>
-                <li><a href="#about-us">About us</a></li>
-                <!-- <li><a href="#solutions">Solutions</a></li> -->
-                <li><a href="#contact">Contact</a></li>
+            {% for p in site.data.nav.pages %}
+                {% unless p.isHome %}
+                <li><a href="{{p.url}}">{{ p.label }}</a></li>
+                {% endunless %}
+                {% for s in p.sections %}
+                <li><a href="{{s.url}}">{{ s.label }}</a></li>
+                {% endfor %}
+            {% endfor %}
             </ul>
         </div>
         <div class="menu-toggle">
@@ -31,9 +32,14 @@
     <div id="mobile-nav" class="animate__fadeInDown">
         <div class="mobile-nav-wrapper">
             <ul>
-                <li><a href="#about-us">About us</a></li>
-                <!-- <li><a href="#solutions">Solutions</a></li> -->
-                <li><a href="#contact">Contact</a></li>
+            {% for p in site.data.nav.pages %}
+                {% unless p.isHome %}
+                <li><a href="{{p.url}}">{{ p.label }}</a></li>
+                {% endunless %}
+                {% for s in p.sections %}
+                <li><a href="{{s.url}}">{{ s.label }}</a></li>
+                {% endfor %}
+            {% endfor %}
             </ul>
         </div>
     </div>

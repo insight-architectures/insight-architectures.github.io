@@ -20,6 +20,7 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - serve.sh
+  - README.md
 
 include:
   - _pages
@@ -32,4 +33,31 @@ defaults:
       path: ""
     values:
       layout: default
-      hero: true
+  - scope:
+      path: ""
+      type: "customers"
+    values:
+      layout: customer
+      custom_style_sheet: customers
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: project
+
+collections:
+  projects:
+    output: true
+    permalink: "/:collection/:title"
+  customers:
+    output: true
+
+page_gen-dirs: true
+
+page_gen:
+  - data: 'team'
+    template: 'team'
+    name: 'id'
+    dir: 'team'
+    filter: is_active
+    title_expr: record['first_name'] + " " + record['last_name']
