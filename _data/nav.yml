@@ -5,6 +5,9 @@ pages:
   - path: /_pages/customers.md
     url: /customers/
     label: Our customers
+  - path: /_pages/contact.md
+    url: /contact-us/
+    label: Contact us
   # - path: /_pages/home.md
   #   isHome: true
   #   sections:
