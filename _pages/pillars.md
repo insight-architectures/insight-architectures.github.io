@@ -27,6 +27,34 @@ Since these changes are continuously tracked, managed and communicated back to t
 
 ## Developer experience
 
+Developing and maintaining any software system, especially if distributed and based on cloud technologies can be extremely burdensome for developers. Starting the several components, each with their own configuration, making sure they all can communicate with each other, while retaining the ability to attach a debugger to any of those components, are all tasks that can take the focus from developers and impact on their ability to provide sensible value to their company.
+
+Having in mind the developer experience while designing the system makes sure that those assigned to develop and maintain the system have all the tools needed to boost their productivity both when developing new features and troubleshooting the system in production.
+
+At Insight Architectures, we believe that a fruitful developer experience can be built around three main approaches.
+
+### Integrating over building
+
+Our customers ask us to deliver them systems that can quickly add value to their business. Most of the times, the value lies in the implementation of the company's business logic not by reinventing the wheel for any engineering task needed to be performed. Delegating these need to existing libraries helps reducing the area of intervention for the developers and, consequentially, freeing up time and mental space for company specific tasks and needs.
+
+Whenever needed, Insight Architectures maintains a set of open source libraries that offer low-level infrastructural helpers that can be integrated in the systems being built for the customers. Our libraries are released with a perpetual MIT license (unless upstream dependencies require otherwise) and can be freely used by our customers. Furthermore, we strive to follow the semantic versioning strict guidelines to help our customers' developer having a clear understanding on whether a new version of these libraries will introduce breaking changes, new features or simply patch previous unintended behaviors.
+
+### Optimized inner development cycle
+
+Being focused on building cloud-based distributed systems, we understand the importance of being able to quickly spin up locally the entire system being built or troubleshooted to be able to test and debug the behavior of the application.
+
+Tools like Microsoft Tye, Docker Compose, LocalStack are all incredible tools available to us to craft a powerful and productive inner development cycle that helps developers adding value to the business with incredible velocity.
+
+### Observability
+
+The final aspect needed to consider for a productive developer experience is observability. Observability is the ability for the maintainers of a system to understand how it is behaving in production without the need to halt its execution.
+
+Techniques like tracing, metrics collection and logging are concerns a system should be designed around from the very beginning. Clear and rich dashboards and carefully defined log filters should be part of the system and not simply an after-thought.
+
+In the latest years, the industry has undertaken an effort to unify the extremely heterogeneous offer in the observability branch. From this collaboration, the Open Telemetry standard is being defined and implemented by all the actors of the many actors in the observability space.
+
+By leveraging the Open Telemetry standard, we can make sure the systems we design and build for our customers are able to integrate with the most popular observability tools. 
+
 ## Automated testing
 
 ## Infrastructure as Code
