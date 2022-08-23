@@ -56,7 +56,7 @@ Another important aspect of the developer experience is the observability of the
 
 The source code is hosted on GitHub so that developers can leverage the well-known and established [GitHub Flow][15] to collaborate while ensuring the quality is kept in check with the help of pull requests and code reviews.
 
-Finally, the type client library mentioned in the paragraph above is another sign of the importance and care given to the developer experience.
+Finally, the typed client library mentioned in the paragraph above is another sign of the importance and care given to the developer experience.
 
 ### Continuous integration
 
