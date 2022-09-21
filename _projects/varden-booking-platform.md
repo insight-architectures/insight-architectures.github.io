@@ -17,12 +17,12 @@ tags:
     - circleci
     - github
     - nuget
-# reviews:
-#     - author:
-#         name: Tobias Nilsson
-#         title: Integration Architect
-#       text: |
-#         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat maximus diam, in suscipit felis hendrerit at. Pellentesque rhoncus tincidunt augue, nec pretium elit. Nulla facilisi. Proin eget aliquet diam. Nullam fermentum nunc lectus, eget convallis diam fringilla at.
+reviews:
+    - author:
+        name: Tobias Nilsson
+        title: Integration Architect
+      text: |
+        The booking platform is a good piece of software to work with, it has great developer support making it easy to start working on it and making improvements. The included tests, both unit and integration, gives me a high confidence that the build I have will work on production. The well thought-out architecture makes it easier to estimate my work both in scope and time. The built CD pipeline speeds up deployment and removes tedious and repetitious work.
 ---
 
 The Booking Platform is a system built to facilitate the integration of the many booking providers available in the healthcare space with Vården's platform.
