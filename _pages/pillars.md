@@ -19,7 +19,7 @@ The core use cases and the volatilities help us design a system that is able to 
 
 Even the best architecture needs a carefully designed plan to be built. This is even more important when coordinating a team.
 
-By carefully studying the several options available to build the system, project design helps our customers taking informed decisions regarding factors like resource allocation and project duration that inevitably affect the execution of the project. Project design helps uncovering and properly handling the compromises between all these factors. With our help and counsel, the customer will be able to choose the project plan that best fits their needs in terms of costs and duration.
+By carefully studying the several options available to build the system, project design helps our customers taking informed decisions regarding factors like resource allocation and project duration that inevitably affect the execution of the project. Project design helps uncover and properly handle the compromises between all these factors. With our help and counsel, the customer will be able to choose the project plan that best fits their needs in terms of costs and duration.
 
 Obviously, like everything in software development, a project design isn't set in stone. Delays, redistribution of resources, changed priorities and added features are all but some of the causes that help a project plan evolve over its execution.
 
@@ -53,9 +53,27 @@ Techniques like tracing, metrics collection and logging are concerns a system sh
 
 In the latest years, the industry has undertaken an effort to unify the extremely heterogeneous offer in the observability branch. From this collaboration, the Open Telemetry standard is being defined and implemented by all the actors of the many actors in the observability space.
 
-By leveraging the Open Telemetry standard, we can make sure the systems we design and build for our customers are able to integrate with the most popular observability tools. 
+By leveraging the Open Telemetry standard, we can make sure the systems we design and build for our customers are able to integrate with the most popular observability tools.
 
 ## Automated testing
+
+In modern software development, automated testing has become paramount for the lifecycle of any application because it helps detecting deviations of the application behavior as soon as possible. Therefore, the meaning of automated testing has evolved from _"proving it's working"_ to _"asserting the expected behavior"_.
+
+Complex software systems are usually covered by a suite of automated tests that is composed by different type of tests.
+
+### Unit tests
+
+### Integration tests
+
+### End to end tests
+
+### Additional type of tests
+
+The most common ones are:
+
+- _Unit tests_ target each individual component of the system, be extremely fast to run and should avoid any kind of interaction with dependencies.
+- _Integration tests_ aim to ensure that all components are able to integrate and properly perform their role in the overall application. These tests usually target mocked versions of the external dependencies.
+- _End to end tests_ are used to validate the general plumbing of the application.
 
 ## Infrastructure as Code
 
