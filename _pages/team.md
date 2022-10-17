@@ -10,7 +10,7 @@ link_to_page: false
     {%- for member in site.data.team -%}
         <div class="cell">
             <div class="card">
-                <img src="/assets/images/team/{{ member.id }}.jpg">
+                <img src="/assets/images/team/{{ member.id }}.jpg" alt="{{ member.first_name}} {{ member.last_name}}"/>
                 <div class="card-section">
                     {% if page.link_to_page %}
                     <h4><a href="{{ member.id | datapage_url: '/team' }}">{{ member.first_name}} {{ member.last_name}}</a></h4>
@@ -21,6 +21,9 @@ link_to_page: false
                     <p>{{ member.role }}</p>
                     {%- endif -%}
                     <div class="contacts fa-lg text-right">
+                        {%- if member.resume -%}
+                        <a href="{{member.resume}}" title="Download the resume" target="_blank"><i class="far fa-file"></i></a>
+                        {%- endif -%}
                         {%- if member.calendly -%}
                         <a href="{{ member.calendly }}" title="Schedule a meeting" target="_blank"><i class="far fa-calendar-alt"></i></a>
                         {%- endif -%}
