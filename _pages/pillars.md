@@ -61,14 +61,6 @@ In modern software development, automated testing has become paramount for the l
 
 Complex software systems are usually covered by a suite of automated tests that is composed by different type of tests.
 
-### Unit tests
-
-### Integration tests
-
-### End to end tests
-
-### Additional type of tests
-
 The most common ones are:
 
 - _Unit tests_ target each individual component of the system, be extremely fast to run and should avoid any kind of interaction with dependencies.
