@@ -1,34 +1,28 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.140.1/containers/jekyll
 {
-	"name": "Jekyll (Community)",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"args": {
-			"NODE_VERSION": "lts/*"
-		}	
+	"image": "mcr.microsoft.com/devcontainers/jekyll:0-bullseye",
+	"forwardPorts": [4000, 35729],
+	"portsAttributes": {
+		"4000": {
+			"label": "Blog",
+			"onAutoForward": "openBrowserOnce"
+		},
+		"35729": {
+			"label": "Live Reload"
+		}
 	},
-
-	// Set *default* container specific settings.json values on container create.
-	"settings": { 
-		"terminal.integrated.shell.linux": "/bin/bash"
+	"features": {
+		"olliglorioso/git-completion/git-completion": "latest",
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+		"ghcr.io/devcontainers/features/node:1": {}
 	},
-
-	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": [
-		"davidanson.vscode-markdownlint"
-	],
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [4000],
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "bundle install",
-
-	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
-	// "remoteUser": "vscode"
-
-	"containerEnv": {
-		"JEKYLL_GITHUB_TOKEN": "${localEnv:JEKYLL_GITHUB_TOKEN}"
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"yzhang.markdown-all-in-one",
+				"streetsidesoftware.code-spell-checker",
+				"DavidAnson.vscode-markdownlint",
+				"shd101wyy.markdown-preview-enhanced"
+			]
+		}
 	}
 }
