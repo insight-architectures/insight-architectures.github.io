@@ -1,4 +1,7 @@
 pages:
+  - path: /_pages/pillars.md
+    url: /pillars/
+    label: Our pillars
   - path: /_pages/team.md
     url: /team/
     label: Our team
